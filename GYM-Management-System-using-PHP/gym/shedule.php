@@ -1,6 +1,25 @@
 <?php
 // Assuming you have a database connection established
 // $conn = new mysqli("localhost", "username", "password", "database");
+session_start();
+error_reporting(0);
+include 'include/config.php';
+$uid=$_SESSION['uid'];
+
+if(isset($_POST['submit']))
+
+$pid=$_POST['pid'];
+
+
+$sql="INSERT INTO tblbooking (package_id,userid) Values(:pid,:uid)";
+
+$query = $dbh -> prepare($sql);
+$query->bindParam(':pid',$pid,PDO::PARAM_STR);
+$query->bindParam(':uid',$uid,PDO::PARAM_STR);
+$query -> execute();
+echo "<script>alert('Package has been booked.');</script>";
+echo "<script>window.location.href='booking-history.php'</script>";
+
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Handle the form submission

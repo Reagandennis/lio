@@ -50,7 +50,7 @@ echo "<script>window.location.href='booking-history.php'</script>";
 	<?php include 'include/header.php';?>
 	<!-- Header Section end -->
 
-	
+    <?php include 'shedule.php'; ?>
 
 	                                                                              
 	<!-- Page top Section -->
@@ -119,7 +119,7 @@ foreach($results as $result)
 		</div>
 	</section>
 	
-
+<?php include 'shedule.php'?>
 	<!-- Footer Section -->
 	<?php include 'include/footer.php'; ?>
 	<!-- Footer Section end -->
